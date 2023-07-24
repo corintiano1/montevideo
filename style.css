@@ -1,0 +1,191 @@
+/* Reset de estilos para garantir consistência entre navegadores */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: #000000;
+    width: 100%;
+    height: 75px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    padding-right: 50px;
+    flex-wrap: wrap;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: darkgray;
+    flex-wrap: wrap;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+a:hover {
+    background-color: #4CAF50;
+    color: #fff;
+    width: 100px;
+}
+a{
+    color: #fff;
+    font-family: sans-serif;
+}
+main {
+    padding: 1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+    margin-top:  50px;
+    width: 80%;
+}
+
+.feedback {
+    background-color: #f7f7f7;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.topo{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    margin-top: 120px;
+}
+
+.item {
+    background-color: #f7f7f7;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.container {
+    max-width: 100%; /* A imagem ocupará no máximo 100% da largura disponível */
+}
+
+img {
+    width: 100%; /* A imagem ocupará 100% da largura do elemento pai (a div com class="container") */
+    height: auto; /* A altura será ajustada proporcionalmente à largura para manter as proporções originais da imagem */
+}
+/* Estilo para tag h */
+.container {
+    display: flex;
+    justify-content: center;
+}
+.content h3{
+    /* Estilos para o conteúdo */
+    font-size: 30px;
+    margin-top: 130px;
+}
+/* Estilos para o ícone do WhatsApp */
+
+
+main {
+    display: flex;
+    flex-wrap: wrap; /* Para envolver os itens quando a tela for menor */
+    justify-content: space-around;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.products, .cart {
+    width: 45%;
+    border: 1px solid #4CAF50;
+    padding: 10px;
+    margin-bottom: 20px; /* Espaçamento entre os elementos */
+}
+.cart{
+  max-height: 300px;
+}
+
+.product, .cart-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+.cart h2 {
+    margin-top: 0;
+}
+
+.total {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+/* Estilos para o ícone do WhatsApp */
+.what a{
+    background-color: #4CAF50;
+    right:10px;
+    width: 47px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 45px;
+    border-radius: 50px;
+}
+.content label{
+    font-size: 20px;
+    color: #000000;
+}
+.whatsapp-icon {
+    margin-top:3px;
+}
+h2{
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Media query para tornar o layout responsivo */
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column; /* Alterar para uma coluna quando a tela for menor */
+    }
+
+    .products, .cart {
+        width: 90%; /* Reduzir a largura para que fiquem mais centralizados */
+    }
+}
+
+
+
+
+
+
+
