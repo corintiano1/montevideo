@@ -3,6 +3,7 @@ const cartItemsList = document.querySelector(".cart-items");
 const totalElement = document.querySelector(".total");
 const whatsappButton = document.querySelector(".whatsapp-button");
 const pixButton = document.querySelector(".pix-button");
+const cartContainer = document.querySelector(".cart-container");
 let total = 0;
 
 addToCartButtons.forEach(button => {
@@ -14,13 +15,18 @@ pixButton.addEventListener("click", payWithPix);
 
 function updateTotal() {
     totalElement.textContent = `Total: R$ ${total.toFixed(2)}`;
+    if (total === 0) {
+        cartContainer.style.display = "none"; // Esconde o carrinho quando não há itens
+    } else {
+        cartContainer.style.display = "block"; // Exibe o carrinho quando há itens
+    }
 }
 
 function addToCart(event) {
     const product = event.target.parentElement;
     const productName = product.querySelector("h3").textContent;
     const productPrice = parseFloat(product.querySelector("p").textContent.replace("Preço: R$ ", ""));
-    
+
     const cartItem = document.createElement("li");
     cartItem.textContent = `${productName} - R$ ${productPrice.toFixed(2)}`;
 
@@ -28,14 +34,14 @@ function addToCart(event) {
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "x";
     deleteButton.classList.add("delete-button");
-    
-    deleteButton.addEventListener("click", function(event) {
+
+    deleteButton.addEventListener("click", function (event) {
         removeFromCart(cartItem, productPrice);
     });
-    
+
     cartItem.appendChild(deleteButton);
     cartItemsList.appendChild(cartItem);
-    
+
     total += productPrice;
     updateTotal();
 }
@@ -47,6 +53,7 @@ function removeFromCart(cartItem, productPrice) {
     total -= productPrice;
     updateTotal();
 }
+
 function sendWhatsAppMessage() {
     const cartItemsText = cartItemsList.innerText;
     const totalText = totalElement.innerText;
@@ -74,4 +81,10 @@ function payWithPix() {
 
     // Exibir código de pagamento PIX para o usuário (pode ser por meio de um modal)
     console.log("Código de pagamento PIX:", pixPayload);
+}
+const minimizeButton = document.querySelector(".minimize-button");
+minimizeButton.addEventListener("click", minimizeCart);
+
+function minimizeCart() {
+    cartContainer.classList.toggle("minimized");
 }
