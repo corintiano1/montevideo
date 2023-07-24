@@ -75,6 +75,10 @@ section {
     justify-content: center;
     margin-top: 120px;
 }
+.topo2{
+    display: flex;
+    justify-content: center;
+}
 
 .item {
     background-color: #f7f7f7;
@@ -101,8 +105,6 @@ img {
     margin-top: 130px;
 }
 /* Estilos para o ícone do WhatsApp */
-
-
 main {
     display: flex;
     flex-wrap: wrap; /* Para envolver os itens quando a tela for menor */
@@ -117,8 +119,46 @@ main {
     padding: 10px;
     margin-bottom: 20px; /* Espaçamento entre os elementos */
 }
+
+
+/* Estilo do carrinho flutuante */
+.cart-container {
+    position: fixed; /* Torna o carrinho flutuante na tela */
+    bottom: 20px;
+    right: 20px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: grab; /* Altera o cursor quando o carrinho for arrastado */
+    display: none; /* Inicialmente esconde o carrinho */
+    z-index: 9999; /* Coloca o carrinho na camada superior */
+    max-height: 300px; /* Altura máxima do carrinho */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical caso o conteúdo ultrapasse a altura máxima */
+    transition: max-height 0.3s ease-in-out; /* Adiciona uma transição suave para a animação de minimizar */
+}
+
+.cart-container.minimized {
+    max-height: 50px; /* Altura máxima do carrinho quando estiver minimizado */
+}
+.minimize-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.minimize-button:hover {
+    background-color: #555;
+}
+
+.cart-container.show {
+    display: block; /* Exibe o carrinho quando tiver itens */
+}
 .cart{
-  max-height: 300px;
+    max-height: 300px;
 }
 
 .product, .cart-item {
@@ -149,9 +189,9 @@ button:hover {
     background-color: #555;
 }
 /* Estilos para o ícone do WhatsApp */
-.what a{
+.what a {
     background-color: #4CAF50;
-    right:10px;
+    right: 10px;
     width: 47px;
     display: flex;
     justify-content: center;
@@ -159,14 +199,17 @@ button:hover {
     font-size: 45px;
     border-radius: 50px;
 }
-.content label{
+
+.content label {
     font-size: 20px;
     color: #000000;
 }
+
 .whatsapp-icon {
-    margin-top:3px;
+    margin-top: 3px;
 }
-h2{
+
+h2 {
     margin-top: 150px;
     display: flex;
     justify-content: center;
@@ -182,10 +225,3 @@ h2{
         width: 90%; /* Reduzir a largura para que fiquem mais centralizados */
     }
 }
-
-
-
-
-
-
-
